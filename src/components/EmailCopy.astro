@@ -1,0 +1,69 @@
+---
+import Copy from "@lucide/astro/icons/copy";
+
+interface Props {
+  email: string;
+  label?: string;
+}
+
+const { email, label = email } = Astro.props;
+const id = `copy-email-${Math.random().toString(36).slice(2)}`;
+---
+
+<div class="email-copy" id={id} data-email={email}>
+  <Copy size={16} />
+  <span>{label}</span>
+</div>
+
+<div class="email-toast" data-toast={id}>Email copiado ✔</div>
+
+<script>
+  const root = document.getElementById("{id}");
+  const toast = document.querySelector(`[data-toast="{id}"]`);
+
+  root?.addEventListener("click", async () => {
+    const email = root.dataset.email;
+    console.log(email);
+    try {
+      await navigator.clipboard.writeText(email);
+
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2000);
+    } catch (err) {
+      console.error("Error copying email", err);
+    }
+  });
+</script>
+
+<style>
+  .email-copy {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .email-toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #111;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .email-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
