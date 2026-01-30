@@ -338,7 +338,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 680px;
+  max-width: 700px;
   grid-column-gap: 68px;
   grid-row-gap: 68px;
   flex-direction: column;
@@ -530,11 +530,11 @@ p {
   display: flex;
 }
 
-.back-nav-button:hover {
+/* .back-nav-button:hover {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   background-color: rgba(8, 8, 8, 0.24);
-}
+} */
 
 .project-desc {
   color: #a8a8a8;
