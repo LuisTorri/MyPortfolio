@@ -7,7 +7,7 @@ import EmailCopy from "../components/EmailCopy.astro";
 
 <Layout title="Luis Torri">
   <html>
-    <Header title="Sam Bernstein" />
+    <Header title="Luis Torri" />
     <body>
       <div class="content">
         <Sidebar selectedItem="home" />
@@ -15,11 +15,16 @@ import EmailCopy from "../components/EmailCopy.astro";
           <div class="container">
             <main class="fold-content-container">
               <div class="fold-content">
-                <h1>Hola, soy Luis 👋<br />Desarrollador Frontend</h1>
+                <h1>
+                  Soy Desarrollador Frontend <br /> Y me gusta construir cosas interesantes
+                  para la web.
+                </h1>
                 <p class="lead">
-                  He trabajado en multiples proyecto usando las siguientes
-                  tecnologías: <br /> React, Angular, Astro, Tailwind CSS, TypeScript,
-                  JavaScript, HTML y CSS.
+                  Actualmente trabajo como Desarrollador Frontend aplicando mis
+                  conocimientos en React y Angular para crear soluciones web
+                  prácticas y funcionales. Mi enfoque está en combinar lógica,
+                  diseño y rendimiento para desarrollar sistemas claros y
+                  mantenibles que cumplan con los objetivos establecidos.
                 </p>
               </div>
               <section class="nav-buttons-container">
@@ -39,7 +44,7 @@ import EmailCopy from "../components/EmailCopy.astro";
                     class="button w-button">GitHub</a
                   >
                 </div>
-                <div class="button w-button">
+                <div id="copy-email-btn" class="button w-button">
                   <EmailCopy email="torriluis12@gmail.com" />
                 </div>
               </section>
@@ -58,60 +63,22 @@ import EmailCopy from "../components/EmailCopy.astro";
                   </div>
                 </div>
                 <div class="single-projects-content">
-                  <h4>Software Development</h4>
+                  <h4>G&L Group - Actualmente</h4>
                   <div class="tech-tools-container">
                     <div class="mini-label-white gray-color">
-                      Technologies &amp; tools
+                      Tecnologías &amp; herramientas
                     </div>
                     <div class="chips-container chips-container-small-width">
                       <div class="single-chip small-chip">React</div>
-                      <div class="single-chip small-chip">Next.js</div>
-                      <div class="single-chip small-chip">Node.js</div>
-                      <div class="single-chip small-chip">MongoDB</div>
-                      <div class="single-chip small-chip">Heroku</div>
-                      <div class="single-chip small-chip">RabbitMQ</div>
-                      <div class="single-chip small-chip">Express.js</div>
-                      <div class="single-chip small-chip">TypeScript</div>
-                      <div class="single-chip small-chip">NestJS</div>
                       <div class="single-chip small-chip">Angular</div>
-                      <div class="single-chip small-chip">Postgres</div>
-                      <div class="single-chip small-chip">Linode</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <!-- DevOps & Cloud -->
-              <a href="/devops" class="projects-container">
-                <div class="single-projects-category">
-                  <div class="projects-category-image-container devops-img">
-                    <img
-                      src="./assets/database.svg"
-                      loading="lazy"
-                      alt=""
-                      class="projects-category-image"
-                    />
-                  </div>
-                </div>
-                <div class="single-projects-content">
-                  <h4>DevOps &amp;&nbsp;Cloud</h4>
-                  <div class="tech-tools-container">
-                    <div class="mini-label-white gray-color">
-                      Technologies &amp; tools
-                    </div>
-                    <div class="chips-container chips-container-small-width">
-                      <div class="single-chip small-chip">Terraform</div>
-                      <div class="single-chip small-chip">Azure</div>
-                      <div class="single-chip small-chip">AWS</div>
-                      <div class="single-chip small-chip">Docker</div>
-                      <div class="single-chip small-chip">Kubernetes</div>
-                      <div class="single-chip small-chip">GitLab CI/CD</div>
-                      <div class="single-chip small-chip">RKE</div>
+                      <div class="single-chip small-chip">TypeScript</div>
+                      <div class="single-chip small-chip">JavaScript</div>
+                      <div class="single-chip small-chip">Tailwind CSS</div>
                       <div class="single-chip small-chip">Node.js</div>
-                      <div class="single-chip small-chip">RabbitMQ</div>
-                      <div class="single-chip small-chip">Linux</div>
-                      <div class="single-chip small-chip">Bash</div>
-                      <div class="single-chip small-chip">Grafana</div>
-                      <div class="single-chip small-chip">Prometheus</div>
+                      <div class="single-chip small-chip">Git</div>
+                      <div class="single-chip small-chip">GitHub</div>
+                      <div class="single-chip small-chip">GitLab</div>
+                      <div class="single-chip small-chip">Postman</div>
                     </div>
                   </div>
                 </div>
@@ -125,3 +92,17 @@ import EmailCopy from "../components/EmailCopy.astro";
     </body>
   </html>
 </Layout>
+
+<script>
+  const copyEmailBtn = document.getElementById("copy-email-btn");
+
+  copyEmailBtn?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    console.log("Copy email");
+    try {
+      await navigator.clipboard.writeText("torriluis12@gmail.com");
+    } catch (err) {
+      console.error("Failed to copy email:", err);
+    }
+  });
+</script>

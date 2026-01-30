@@ -4,63 +4,59 @@ import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
 const projects = [
   {
-    title: "CodeCraft",
+    title: "Agenda Automatizada - G&L Group",
     desc: [
-      "Developed a large-scale e-commerce platform for indie game developers",
-      "Designed and implemented UI, backend, and database architecture",
-      "Contributed to RESTful API and GraphQL design",
-      "Led a team of three engineers for several months"
+      "Desarrollé la interfaz de un servicio de automatización de reuniones utilizando React y Vite, optimizando la experiencia de usuario en la configuración de parámetros.",
+      "Implementé formularios dinámicos y validaciones de datos para asegurar el cumplimiento de las reglas de negocio establecidas por el usuario.",
+      "Mejoré los tiempos de carga y la agilidad del desarrollo mediante el uso de Vite, garantizando una arquitectura de componentes modular y escalable.",
+      "Integré y procesé datos provenientes de una API REST interna, asegurando la correcta sincronización entre el servidor y la interfaz de usuario.",
+      "Gestioné el flujo de información asíncrona para transformar los datos crudos del backend en elementos visuales dinámicos y funcionales.",
     ],
-    tech: ["React", "Next.js", "Node.js", "MongoDB", "Heroku"]
+    tech: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Git",
+      "GitLab",
+      "Postman",
+    ],
   },
-  {
-    title: "CloudMason",
-    desc: [
-      "Contributed to microservices architecture design for email distribution system",
-      "Created a backend infrastructure with queues and an event bus",
-      "Designed to handle a high volume ~3 million emails per day"
-    ],
-    tech: ["Node.js", "RabbitMQ", "Docker", "Kubernetes"]
-  },
-  {
-    title: "Sarah (HealthEase.io)",
-    desc: [
-      "Contributed to Israel's largest telehealth platform for doctors and patients",
-      "Developed appointment and billing systems",
-      "Resolved live production bugs and server issues"
-    ],
-    tech: ["React", "Node.js", "Express.js", "MySQL", "AWS"]
-  }
 ];
 ---
 
-<!DOCTYPE html>
-<html
->
-  <Header title="Software Development | Sam Bernstein" />
+<!doctype html>
+<html>
+  <Header title="Proyectos | Luis Torri" />
   <body>
     <div class="content">
-        <Sidebar selectedItem="software-development" />
+      <Sidebar selectedItem="software-development" />
       <nav class="main">
         <div class="container">
           <div class="back-nav-container">
             <a href="/" class="back-nav-button w-inline-block"
-              ><img src="/assets/back.svg" loading="lazy" alt="" class="back-nav-img" />
-              <div>Back</div></a
-            >
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+              />
+            </a>
           </div>
           <div class="content-container">
-            <h1>Software Development</h1>
+            <h1>Proyectos</h1>
             <section class="items-container">
-                <div class="resouce-items">
-                    {projects.map(project => (
-                      <Project 
-                        title={project.title} 
-                        desc={project.desc}
-                        tech={project.tech}
-                      />
-                    ))}
-                  </div>
+              <div class="resouce-items">
+                {
+                  projects.map((project) => (
+                    <Project
+                      title={project.title}
+                      desc={project.desc}
+                      tech={project.tech}
+                    />
+                  ))
+                }
+              </div>
             </section>
           </div>
         </div>
