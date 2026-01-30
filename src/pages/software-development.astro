@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Project from "../components/Project.astro";
 import Sidebar from "../components/Sidebar.astro";
+import Layout from "../layouts/Layout.astro";
 const projects = [
   {
     title: "Agenda Automatizada - G&L Group",
@@ -25,8 +26,7 @@ const projects = [
 ];
 ---
 
-<!doctype html>
-<html>
+<Layout title="Proyectos">
   <Header title="Proyectos | Luis Torri" />
   <body>
     <div class="content">
@@ -65,4 +65,4 @@ const projects = [
 
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
   </body>
-</html>
+</Layout>
